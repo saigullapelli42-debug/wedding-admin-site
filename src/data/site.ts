@@ -74,6 +74,7 @@ export const gallery: { src: string; category: Exclude<GalleryCategory, "All">; 
   { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=900&q=80&auto=format&fit=crop", category: "Friends", alt: "Reception dance" },
   { src: "https://images.unsplash.com/photo-1508435234994-67cfd7ef4bb1?w=900&q=80&auto=format&fit=crop", category: "Pre Wedding", alt: "Golden hour couple" },
   { src: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=900&q=80&auto=format&fit=crop", category: "Family", alt: "Extended family" },
+  { src: "/Photo.jpg", category: "Family", alt: "Extended family" },
 ];
 
 export const events = [
