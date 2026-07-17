@@ -973,11 +973,13 @@ function WeddingHome() {
   const [refreshBlessings, setRefreshBlessings] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [currentSong, setCurrentSong] = useState(0);
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
   const songs = [
-  "/kalyani-vacha-vacha-the-family-star-ringtone-download-link-thedeverakonda229551187.mp3",
-  "/priya-priya-song-with-lyrics-jeans-songs-aishwarya-rai-prashanth-ar-rahman-a_dCzu0421.mp3",
-];
+    "/kalyani-vacha-vacha-the-family-star-ringtone-download-link-thedeverakonda229551187.mp3",
+    "/priya-priya-song-with-lyrics-jeans-songs-aishwarya-rai-prashanth-ar-rahman-a_dCzu0421.mp3",
+  ];
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 1200);
@@ -986,7 +988,9 @@ function WeddingHome() {
 
   function toggleMusic() {
     const a = audioRef.current;
+
     if (!a) return;
+
     if (playing) {
       a.pause();
       setPlaying(false);
@@ -995,9 +999,10 @@ function WeddingHome() {
       a.play().catch(() => {});
       setPlaying(true);
     }
-    function playNextSong() {
-  setCurrentSong((prev) => (prev + 1) % songs.length);
-    }
+  }
+
+  function playNextSong() {
+    setCurrentSong((prev) => (prev + 1) % songs.length);
   }
 
   function share() {
