@@ -972,7 +972,12 @@ function WeddingHome() {
   const [confetti, setConfetti] = useState(false);
   const [refreshBlessings, setRefreshBlessings] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [currentSong, setCurrentSong] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const songs = [
+  "/kalyani-vacha-vacha-the-family-star-ringtone-download-link-thedeverakonda229551187.mp3",
+  "/priya-priya-song-with-lyrics-jeans-songs-aishwarya-rai-prashanth-ar-rahman-a_dCzu0421.mp3",
+];
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 1200);
@@ -989,6 +994,9 @@ function WeddingHome() {
       a.volume = 0.35;
       a.play().catch(() => {});
       setPlaying(true);
+    }
+    function playNextSong() {
+  setCurrentSong((prev) => (prev + 1) % songs.length);
     }
   }
 
@@ -1012,11 +1020,16 @@ function WeddingHome() {
       <FloatingPetals />
       <Confetti show={confetti} />
       <audio
-        ref={audioRef}
-        src="/kalyani-vacha-vacha-the-family-star-ringtone-download-link-thedeverakonda229551187.mp3"
-        loop
-        preload="none"
-      />
+  ref={audioRef}
+  src={songs[currentSong]}
+  onEnded={playNextSong}
+  onLoadedData={() => {
+    if (playing) {
+      audioRef.current?.play().catch(() => {});
+    }
+  }}
+  preload="auto"
+/>
 
       <Nav playing={playing} onToggleMusic={toggleMusic} onShare={share} />
 
