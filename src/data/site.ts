@@ -155,9 +155,9 @@ export const venue = {
 
 export const gift = {
   enabled: true,
-  upiId: "sai.priya@upi",
+  upiId: "sai.priyawedding@ybl",
   bankName: "HDFC Bank",
   accountName: "Sai & Priya",
   qrImage:
-    "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=upi://pay?pa=sai.priya@upi&pn=Sai%20and%20Priya",
+    "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=upi://pay?pa=sai.priyawedding@ybl&pn=Sai%20and%20Priya",
 };
